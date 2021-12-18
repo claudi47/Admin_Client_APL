@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace Admin_Client_APL
 {
     /// <summary>
-    /// Logica di interazione per HomePage.xaml
+    /// Logica di interazione per PageSettings.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class PageSettings : Page
     {
-        public HomePage()
+        public PageSettings()
         {
             InitializeComponent();
-        }
-
-        private void onClick_Stats(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageStats());
-        }
-
-        private void onClick_Settings(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new PageSettings());
         }
     }
 }
