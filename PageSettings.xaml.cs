@@ -15,14 +15,16 @@ using System.Windows.Shapes;
 
 namespace Admin_Client_APL
 {
-    /// <summary>
-    /// Logica di interazione per PageSettings.xaml
-    /// </summary>
     public partial class PageSettings : Page
     {
+        public List<int> MaxResearch { get; set; }
+        public List<string> Period { get; set; }
+
         public PageSettings()
         {
             InitializeComponent();
+            MaxResearch = new List<int>(){ 1, 2, 3, 4, 5, 10 };
+            Period = new List<string>(){ "1 day", "3 days", "1 week", "2 weeks", "1 month", "3 months", "6 months", "1 year", "forever" };
         }
     }
 }

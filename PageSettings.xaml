@@ -6,12 +6,48 @@
       xmlns:local="clr-namespace:Admin_Client_APL"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageSettings">
-
+      Title="PageSettings"
+      d:DataContext="{d:DesignInstance {x:Type local:PageSettings}}">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <SolidColorBrush Color="#8EC2FA">
             </SolidColorBrush>
         </Grid.Background>
+        <ListBox HorizontalAlignment="Left" Height="34" Margin="210,34,0,0" VerticalAlignment="Top" Width="50" ItemsSource="{Binding MaxResearch}"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"  Height="18" Margin="45,42,0,0" TextWrapping="Wrap" Width="155"><Run Language="it-it" Text="MAX NUMBER OF RESEARCH"/></TextBlock>
+        <CheckBox Content="for all" HorizontalAlignment="Left" Height="20" Margin="276,45,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBlock HorizontalAlignment="Left" Margin="382,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="117" RenderTransformOrigin="0.155,1.011">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Language="it-it" Text="or for a specific user"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="523,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Margin="254,38,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="142,44,0,50" Grid.Row="1" TextWrapping="Wrap" Width="93" RenderTransformOrigin="1.144,0.515"><Run Language="it-it" Text="Suspend "/><Run Text="the user"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="443,42,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="31"><Run Language="it-it" Text="for"/></TextBlock>
+        <ComboBox HorizontalAlignment="Left" Margin="493,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding MaxResearch}">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <CheckBox Content="Disable/Enable Goldbet" HorizontalAlignment="Left" Margin="321,35,0,0" Grid.Row="2" VerticalAlignment="Top" Height="21" Width="153"/>
+        <CheckBox Content="Disable/Enable Bwin" HorizontalAlignment="Left" Margin="321,61,0,0" Grid.Row="2" VerticalAlignment="Top" Width="137"/>
+        <Button Content="Apply" HorizontalAlignment="Left" Margin="682,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="34" Width="67"/>
+        <Button Content="Restart the bot" HorizontalAlignment="Left" Height="34" Margin="559,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="95"/>
     </Grid>
 </Page>
