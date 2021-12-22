@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Printing;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,7 +32,8 @@ namespace Admin_Client_APL
         public PageSettings()
         {
             MaxResearch = new ObservableCollection<string>() { "1", "2", "3", "4", "5", "10", "unlimited" };
-            Period = new ObservableCollection<string>() { "1 day", "3 days", "1 week", "2 weeks", "1 month", "3 months", "6 months", "1 year", "forever" };
+            Period = new ObservableCollection<string>()
+                { "1 day", "3 days", "1 week", "2 weeks", "1 month", "3 months", "6 months", "1 year", "forever" };
             SettingGuiData = new SettingsGUIdata();
             InitializeComponent();
         }
@@ -38,9 +42,19 @@ namespace Admin_Client_APL
         {
             // Conversion of the data present in the GUI in the format of data to send to the server
             var instanceOfSettingsData = SettingGuiData.ConvertToSettingsData();
-            var response = await App.Client.PostAsJsonAsync("http://localhost:8000/bot/settings/", instanceOfSettingsData);
-            if(!response.IsSuccessStatusCode)
-                Console.Error.WriteLine("Errore nella response!");
+            try
+            {
+                var response =
+                    await App.Client.PostAsync("http://localhost:8000/bot/settings/", new StringContent(JsonSerializer.Serialize(instanceOfSettingsData), Encoding.UTF8, "application/json"));
+                if (!response.IsSuccessStatusCode)
+                {
+                    await Console.Error.WriteLineAsync("Errore nella response!");
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
     }
 }
