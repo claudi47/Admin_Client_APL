@@ -16,13 +16,16 @@ namespace Admin_Client_APL
         public bool ResearchForAll { get; set; }
 
         [JsonPropertyName("username_research")]
-        public string ResearchUsername { get; set; }
+        public string? ResearchUsername { get; set; }
 
         [JsonPropertyName("user_suspended")]
-        public string SuspendingUser { get; set; }
+        public string? SuspendingUser { get; set; }
 
         [JsonPropertyName("period_of_suspension")]
-        public string SuspendingPeriod { get; set; }
+        public DateTime? SuspendingPeriod { get; set; }
+
+        [JsonPropertyName("perma_ban")]
+        public bool PermaBan { get; set; }
 
         [JsonPropertyName("bool_toggle_goldbet")]
         public bool DisableGoldbet { get; set; }
