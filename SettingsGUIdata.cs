@@ -25,6 +25,7 @@ namespace Admin_Client_APL
         {
             DisableBwin = DisableBwin,
             DisableGoldbet = DisableGoldbet,
+            // if MaxResearch is not null the string will be converted into a number (int)
             MaxResearch = MaxResearch != "unlimited" ? int.Parse(MaxResearch ?? "0", NumberStyles.Integer, NumberFormatInfo.InvariantInfo) : -1,
             ResearchForAll = ResearchForAll,
             ResearchUsername = ResearchUsername == string.Empty ? null : ResearchUsername,

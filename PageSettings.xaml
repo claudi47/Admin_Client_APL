@@ -45,7 +45,7 @@
                  Width="142" Text="{Binding SettingGuiData.ResearchUsername}"/>
         <TextBox HorizontalAlignment="Left" Height="26" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"
                  Width="146" Margin="254,38,0,0" Text="{Binding SettingGuiData.SuspendingUser}"/>
-        <TextBlock HorizontalAlignment="Left" Margin="142,44,0,50" Grid.Row="1" TextWrapping="Wrap" Width="93"
+        <TextBlock HorizontalAlignment="Left" Margin="142,40,0,50" Grid.Row="1" TextWrapping="Wrap" Width="96"
                    RenderTransformOrigin="1.144,0.515">
             <Run Language="it-it" Text="Suspend " /><Run Text="the user" />
         </TextBlock>
@@ -68,9 +68,7 @@
                   VerticalAlignment="Top" Height="21" Width="153" IsChecked="{Binding SettingGuiData.DisableGoldbet}"/>
         <CheckBox Content="Disable/Enable Bwin" HorizontalAlignment="Left" Margin="321,61,0,0" Grid.Row="2"
                   VerticalAlignment="Top" Width="137" IsChecked="{Binding SettingGuiData.DisableBwin}"/>
-        <Button Content="Apply" HorizontalAlignment="Left" Margin="682,0,0,0" Grid.Row="3" VerticalAlignment="Center"
+        <Button Content="Apply" HorizontalAlignment="Left" Margin="662,0,0,0" Grid.Row="3" VerticalAlignment="Center"
                 Height="34" Width="67" Click="onClick_Apply" />
-        <Button Content="Restart the bot" HorizontalAlignment="Left" Height="34" Margin="559,0,0,0" Grid.Row="3"
-                VerticalAlignment="Center" Width="95" />
     </Grid>
 </Page>

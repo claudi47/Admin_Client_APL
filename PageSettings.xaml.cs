@@ -11,13 +11,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Admin_Client_APL
 {
@@ -44,8 +38,10 @@ namespace Admin_Client_APL
             var instanceOfSettingsData = SettingGuiData.ConvertToSettingsData();
             try
             {
+                // This function wants a StringClass object, where we pass a JsonSerializer to serialize the data to send, the encoding and the content type
                 var response =
-                    await App.Client.PostAsync("http://localhost:8000/bot/settings/", new StringContent(JsonSerializer.Serialize(instanceOfSettingsData), Encoding.UTF8, "application/json"));
+                    await App.Client.PostAsync("http://localhost:8000/bot/settings/", 
+                        new StringContent(JsonSerializer.Serialize(instanceOfSettingsData), Encoding.UTF8, "application/json"));
                 if (!response.IsSuccessStatusCode)
                 {
                     await Console.Error.WriteLineAsync("Errore nella response!");

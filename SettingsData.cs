@@ -9,6 +9,7 @@ namespace Admin_Client_APL
 {
     public class SettingsData
     {
+        // the ? after the data type means that the field can be NULL
         [JsonPropertyName("max_researches")]
         public int MaxResearch { get; set; }
 

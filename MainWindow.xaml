@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Admin_Client_APL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="520" Width="810"
+        ResizeMode="NoResize"
         Source="HomePage.xaml">
     
 </NavigationWindow>
